@@ -15,9 +15,28 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
+    <style>
+        main{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        aside {
+        height: 80vh;
+        width: 10vw;
+        border: 1px solid black;
+        border-radius: 5px;
+        }
+    </style>
     <body>
         {% include 'header.html.twig' %}
-        {% block body %}{% endblock %}
+        <main>
+            <aside>
+            </aside>
+                {% block body %}
+                {% endblock %}
+            <aside>
+            </aside>
+        </main>
         {% include 'footer.html.twig' %}
     </body>
 </html>
