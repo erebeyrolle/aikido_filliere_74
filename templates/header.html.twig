@@ -9,16 +9,37 @@
     
     header {
         margin: auto;
-        height: 10vh;
-        width: 96vw;
+        height: 13vh;
+        width: 98vw;
         border: 1px dashed red;
-        border-radius: 5px;}
+        border-radius: 5px;
+        }
+
+        .navigation {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 5rem;
+            background: lightgrey;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            color: black;
+        }
+
+        .navigation a:hover {
+            background: grey;
+        }
 </style>
 
 <header>
     <h1>TEST HEADER</h1>
     <nav> 
-        <ul>
+        <ul class="navigation">
             <li><a href="">Accueil</a></li> 
             <li><a href="">Génèse de l'Aïkido</a></li> 
             <li><a href="">Pratiquer l'Aïkido</a></li> 
