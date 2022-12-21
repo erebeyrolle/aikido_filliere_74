@@ -2,37 +2,50 @@
 
 namespace App\Entity;
 
-use App\Repository\MessageSenderRepository;
+// use App\Repository\MessageSenderRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: MessageSenderRepository::class)]
+/**
+ * @ORM\Entity(repositoryClass=MessageSenderRepository::class)
+ */
+
 class MessageSender
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
-
-    #[ORM\Column(type: 'string', length: 50)]
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private $last_name;
-
-    #[ORM\Column(type: 'string', length: 25)]
+    /**
+     * @ORM\Column(type="string", length=25)
+     */
     private $first_name;
-
-    #[ORM\Column(type: 'string', length: 255)]
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
-
-    #[ORM\Column(type: 'string', length: 5)]
+    /**
+     * @ORM\Column(type="string", length=5)
+     */
     private $zip_code;
-
-    #[ORM\Column(type: 'string', length: 50)]
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private $city;
-
-    #[ORM\Column(type: 'text')]
+    /**
+     * @ORM\Column(type="text")
+     */
     private $message;
-
-    #[ORM\Column(type: 'datetime')]
+    /**
+     * @ORM\Column(type="datetime")
+     */
     private $created_date;
+
 
     public function getId(): ?int
     {
@@ -116,10 +129,15 @@ class MessageSender
         return $this->created_date;
     }
 
-    public function setCreatedDate(\DateTimeInterface $created_date): self
+    public function setCreatedDate(\DateTime $created_date)/*: self*/
     {
         $this->created_date = $created_date;
 
-        return $this;
+        return $created_date;
+    }
+
+    public function __construct()
+    {
+        $this->setCreatedDate(new \DateTime(('Europe/Paris')));
     }
 }
