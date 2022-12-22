@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\MessageSender;
+use App\Entity\Message;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<MessageSender>
+ * @extends ServiceEntityRepository<Message>
  *
- * @method MessageSender|null find($id, $lockMode = null, $lockVersion = null)
- * @method MessageSender|null findOneBy(array $criteria, array $orderBy = null)
- * @method MessageSender[]    findAll()
- * @method MessageSender[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Message|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Message|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Message[]    findAll()
+ * @method Message[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MessageSenderRepository extends ServiceEntityRepository
+class MessageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, MessageSender::class);
+        parent::__construct($registry, Message::class);
     }
 
-    public function add(MessageSender $entity, bool $flush = false): void
+    public function add(Message $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class MessageSenderRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(MessageSender $entity, bool $flush = false): void
+    public function remove(Message $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class MessageSenderRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return MessageSender[] Returns an array of MessageSender objects
+//     * @return Message[] Returns an array of Message objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class MessageSenderRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?MessageSender
+//    public function findOneBySomeField($value): ?Message
 //    {
 //        return $this->createQueryBuilder('m')
 //            ->andWhere('m.exampleField = :val')

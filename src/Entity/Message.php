@@ -2,14 +2,14 @@
 
 namespace App\Entity;
 
-// use App\Repository\MessageSenderRepository;
+// use App\Repository\MessageRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=MessageSenderRepository::class)
+ * @ORM\Entity(repositoryClass=MessageRepository::class)
  */
 
-class MessageSender
+class Message
 {
     /**
      * @ORM\Id()
