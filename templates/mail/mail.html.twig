@@ -1,0 +1,29 @@
+{# templates/mail/mail.html.twig #}
+
+{# {% extends 'base.html.twig' %} #}
+
+{# {% block title %} <h1>Aïkido de la Fillière 74</h1>{% endblock %} #}
+<style>
+    h1 {
+    text-align: center;
+    color: green;
+    height: 2.5rem;
+    }
+
+    header {
+    margin: auto;
+    height: 13vh;
+    width: 98vw;
+    border: 1px dashed red;
+    border-radius: 5px;
+    }
+</style>
+
+{% block body %}
+<header>
+    <h1>Aïkido de la Fillière 74</h1>
+</header>
+<h2> {{ firstname  }} {{ lastname  }}</h2>
+<p>Vous a envoyé le message suivant :</p><br>
+<p>{{ content }}</p>
+{% endblock %}

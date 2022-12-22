@@ -1,3 +1,5 @@
+{# templates/contact/contact.html.twig #}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Contact{% endblock %}
@@ -28,12 +30,15 @@
 </style>
 <section>
     <div class="example-wrapper">
-
         {{ form(message_form) }}
-
     </div>
-
     <img class="construct" src="/images/under-construction.gif" />
+    
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 </section>
 
 {% endblock %}
